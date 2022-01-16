@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles/antlr4_runtime"
+		},
+		{
+			"file" : "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles/antlr4_runtime.rule"
+		},
+		{
+			"file" : "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles/antlr4_runtime-complete.rule"
+		},
+		{
+			"file" : "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-build.rule"
+		},
+		{
+			"file" : "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-configure.rule"
+		},
+		{
+			"file" : "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-download.rule"
+		},
+		{
+			"file" : "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-install.rule"
+		},
+		{
+			"file" : "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-mkdir.rule"
+		},
+		{
+			"file" : "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-patch.rule"
+		},
+		{
+			"file" : "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"antlr4_runtime"
+		],
+		"name" : "antlr4_runtime"
+	}
+}

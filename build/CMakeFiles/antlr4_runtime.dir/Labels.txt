@@ -1,0 +1,13 @@
+# Target labels
+ antlr4_runtime
+# Source files and their labels
+/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles/antlr4_runtime
+/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles/antlr4_runtime.rule
+/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles/antlr4_runtime-complete.rule
+/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-build.rule
+/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-configure.rule
+/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-download.rule
+/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-install.rule
+/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-mkdir.rule
+/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-patch.rule
+/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-update.rule
