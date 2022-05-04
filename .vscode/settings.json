@@ -1,4 +1,18 @@
 {
-    "python.formatting.provider": "black",
-    "git.ignoreLimitWarning": true
+    "antlr4.generation": {
+        "mode": "external",
+        "outputDir": "generated",
+        "language": "Cpp",
+        "listeners": false,
+        "visitors": true
+    },
+    "git.ignoreLimitWarning": true,
+    "files.associations": {
+        "system_error": "cpp",
+        "*.inc": "cpp",
+        "string": "cpp",
+        "atomic": "cpp",
+        "bitset": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
 }

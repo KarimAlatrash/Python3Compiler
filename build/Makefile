@@ -207,6 +207,54 @@ antlr-compiler/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr-compiler.dir/build.make CMakeFiles/antlr-compiler.dir/build
 .PHONY : antlr-compiler/fast
 
+antlr4cpp_generated_src/Python3Lexer/Python3Lexer.o: antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.o
+.PHONY : antlr4cpp_generated_src/Python3Lexer/Python3Lexer.o
+
+# target to build an object file
+antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr-compiler.dir/build.make CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.o
+.PHONY : antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.o
+
+antlr4cpp_generated_src/Python3Lexer/Python3Lexer.i: antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.i
+.PHONY : antlr4cpp_generated_src/Python3Lexer/Python3Lexer.i
+
+# target to preprocess a source file
+antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr-compiler.dir/build.make CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.i
+.PHONY : antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.i
+
+antlr4cpp_generated_src/Python3Lexer/Python3Lexer.s: antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.s
+.PHONY : antlr4cpp_generated_src/Python3Lexer/Python3Lexer.s
+
+# target to generate assembly for a file
+antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr-compiler.dir/build.make CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.s
+.PHONY : antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.s
+
+antlr4cpp_generated_src/Python3Parser/Python3Parser.o: antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.o
+.PHONY : antlr4cpp_generated_src/Python3Parser/Python3Parser.o
+
+# target to build an object file
+antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr-compiler.dir/build.make CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.o
+.PHONY : antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.o
+
+antlr4cpp_generated_src/Python3Parser/Python3Parser.i: antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.i
+.PHONY : antlr4cpp_generated_src/Python3Parser/Python3Parser.i
+
+# target to preprocess a source file
+antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr-compiler.dir/build.make CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.i
+.PHONY : antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.i
+
+antlr4cpp_generated_src/Python3Parser/Python3Parser.s: antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.s
+.PHONY : antlr4cpp_generated_src/Python3Parser/Python3Parser.s
+
+# target to generate assembly for a file
+antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr-compiler.dir/build.make CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.s
+.PHONY : antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -246,6 +294,12 @@ help:
 	@echo "... intrinsics_gen"
 	@echo "... omp_gen"
 	@echo "... antlr-compiler"
+	@echo "... antlr4cpp_generated_src/Python3Lexer/Python3Lexer.o"
+	@echo "... antlr4cpp_generated_src/Python3Lexer/Python3Lexer.i"
+	@echo "... antlr4cpp_generated_src/Python3Lexer/Python3Lexer.s"
+	@echo "... antlr4cpp_generated_src/Python3Parser/Python3Parser.o"
+	@echo "... antlr4cpp_generated_src/Python3Parser/Python3Parser.i"
+	@echo "... antlr4cpp_generated_src/Python3Parser/Python3Parser.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

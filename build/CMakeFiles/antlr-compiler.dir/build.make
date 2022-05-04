@@ -69,28 +69,91 @@ include CMakeFiles/antlr-compiler.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/antlr-compiler.dir/flags.make
 
+antlr4cpp_generated_src/Python3Lexer/Python3Lexer.interp: ../Python3Lexer.g4
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building Python3Lexer with ANTLR 4.9.2"
+	cd /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython && /Library/Java/JavaVirtualMachines/jdk-15.0.1.jdk/Contents/Home/bin/java -jar /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/thirdparty/antlr/antlr-4.9.2-complete.jar Python3Lexer.g4 -o /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Lexer -no-listener -Dlanguage=Cpp
+
+antlr4cpp_generated_src/Python3Lexer/Python3Lexer.tokens: antlr4cpp_generated_src/Python3Lexer/Python3Lexer.interp
+	@$(CMAKE_COMMAND) -E touch_nocreate antlr4cpp_generated_src/Python3Lexer/Python3Lexer.tokens
+
+antlr4cpp_generated_src/Python3Lexer/Python3Lexer.h: antlr4cpp_generated_src/Python3Lexer/Python3Lexer.interp
+	@$(CMAKE_COMMAND) -E touch_nocreate antlr4cpp_generated_src/Python3Lexer/Python3Lexer.h
+
+antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp: antlr4cpp_generated_src/Python3Lexer/Python3Lexer.interp
+	@$(CMAKE_COMMAND) -E touch_nocreate antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp
+
+antlr4cpp_generated_src/Python3Parser/Python3Parser.interp: ../Python3Parser.g4
+antlr4cpp_generated_src/Python3Parser/Python3Parser.interp: ../Python3Lexer.g4
+antlr4cpp_generated_src/Python3Parser/Python3Parser.interp: antlr4cpp_generated_src/Python3Lexer/Python3Lexer.interp
+antlr4cpp_generated_src/Python3Parser/Python3Parser.interp: antlr4cpp_generated_src/Python3Lexer/Python3Lexer.tokens
+antlr4cpp_generated_src/Python3Parser/Python3Parser.interp: antlr4cpp_generated_src/Python3Lexer/Python3Lexer.h
+antlr4cpp_generated_src/Python3Parser/Python3Parser.interp: antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building Python3Parser with ANTLR 4.9.2"
+	cd /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython && /Library/Java/JavaVirtualMachines/jdk-15.0.1.jdk/Contents/Home/bin/java -jar /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/thirdparty/antlr/antlr-4.9.2-complete.jar Python3Parser.g4 -o /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Parser -no-listener -Dlanguage=Cpp -lib /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Lexer
+
+antlr4cpp_generated_src/Python3Parser/Python3Parser.tokens: antlr4cpp_generated_src/Python3Parser/Python3Parser.interp
+	@$(CMAKE_COMMAND) -E touch_nocreate antlr4cpp_generated_src/Python3Parser/Python3Parser.tokens
+
+antlr4cpp_generated_src/Python3Parser/Python3Parser.h: antlr4cpp_generated_src/Python3Parser/Python3Parser.interp
+	@$(CMAKE_COMMAND) -E touch_nocreate antlr4cpp_generated_src/Python3Parser/Python3Parser.h
+
+antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp: antlr4cpp_generated_src/Python3Parser/Python3Parser.interp
+	@$(CMAKE_COMMAND) -E touch_nocreate antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp
+
 CMakeFiles/antlr-compiler.dir/main.cpp.o: CMakeFiles/antlr-compiler.dir/flags.make
 CMakeFiles/antlr-compiler.dir/main.cpp.o: ../main.cpp
 CMakeFiles/antlr-compiler.dir/main.cpp.o: CMakeFiles/antlr-compiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/antlr-compiler.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/antlr-compiler.dir/main.cpp.o -MF CMakeFiles/antlr-compiler.dir/main.cpp.o.d -o CMakeFiles/antlr-compiler.dir/main.cpp.o -c /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/antlr-compiler.dir/main.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/antlr-compiler.dir/main.cpp.o -MF CMakeFiles/antlr-compiler.dir/main.cpp.o.d -o CMakeFiles/antlr-compiler.dir/main.cpp.o -c /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/main.cpp
 
 CMakeFiles/antlr-compiler.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr-compiler.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/main.cpp > CMakeFiles/antlr-compiler.dir/main.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/main.cpp > CMakeFiles/antlr-compiler.dir/main.cpp.i
 
 CMakeFiles/antlr-compiler.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr-compiler.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/main.cpp -o CMakeFiles/antlr-compiler.dir/main.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/main.cpp -o CMakeFiles/antlr-compiler.dir/main.cpp.s
+
+CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.o: CMakeFiles/antlr-compiler.dir/flags.make
+CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.o: antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp
+CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.o: CMakeFiles/antlr-compiler.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.o -MF CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.o.d -o CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.o -c /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp
+
+CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp > CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.i
+
+CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp -o CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.s
+
+CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.o: CMakeFiles/antlr-compiler.dir/flags.make
+CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.o: antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp
+CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.o: CMakeFiles/antlr-compiler.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.o -MF CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.o.d -o CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.o -c /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp
+
+CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp > CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.i
+
+CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp -o CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.s
 
 # Object files for target antlr-compiler
 antlr__compiler_OBJECTS = \
-"CMakeFiles/antlr-compiler.dir/main.cpp.o"
+"CMakeFiles/antlr-compiler.dir/main.cpp.o" \
+"CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.o" \
+"CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.o"
 
 # External object files for target antlr-compiler
 antlr__compiler_EXTERNAL_OBJECTS =
 
 antlr-compiler: CMakeFiles/antlr-compiler.dir/main.cpp.o
+antlr-compiler: CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.o
+antlr-compiler: CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.o
 antlr-compiler: CMakeFiles/antlr-compiler.dir/build.make
 antlr-compiler: /usr/local/opt/llvm/lib/libLLVMSupport.a
 antlr-compiler: /usr/local/opt/llvm/lib/libLLVMCore.a
@@ -107,7 +170,7 @@ antlr-compiler: /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/lib/
 antlr-compiler: /Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/lib/libcurses.tbd
 antlr-compiler: /usr/local/opt/llvm/lib/libLLVMDemangle.a
 antlr-compiler: CMakeFiles/antlr-compiler.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable antlr-compiler"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable antlr-compiler"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/antlr-compiler.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -118,7 +181,14 @@ CMakeFiles/antlr-compiler.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/antlr-compiler.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/antlr-compiler.dir/clean
 
-CMakeFiles/antlr-compiler.dir/depend:
+CMakeFiles/antlr-compiler.dir/depend: antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp
+CMakeFiles/antlr-compiler.dir/depend: antlr4cpp_generated_src/Python3Lexer/Python3Lexer.h
+CMakeFiles/antlr-compiler.dir/depend: antlr4cpp_generated_src/Python3Lexer/Python3Lexer.interp
+CMakeFiles/antlr-compiler.dir/depend: antlr4cpp_generated_src/Python3Lexer/Python3Lexer.tokens
+CMakeFiles/antlr-compiler.dir/depend: antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp
+CMakeFiles/antlr-compiler.dir/depend: antlr4cpp_generated_src/Python3Parser/Python3Parser.h
+CMakeFiles/antlr-compiler.dir/depend: antlr4cpp_generated_src/Python3Parser/Python3Parser.interp
+CMakeFiles/antlr-compiler.dir/depend: antlr4cpp_generated_src/Python3Parser/Python3Parser.tokens
 	cd /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles/antlr-compiler.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/antlr-compiler.dir/depend
 

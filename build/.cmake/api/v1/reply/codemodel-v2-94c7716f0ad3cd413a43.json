@@ -1,0 +1,114 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.7"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "AntlrPython",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "acc_gen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-acc_gen-Debug-13c700b52bfbdf816586.json",
+					"name" : "acc_gen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "antlr-compiler::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-antlr-compiler-Debug-99c7d0ebcab6f16ce1d4.json",
+					"name" : "antlr-compiler",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "antlr4_runtime::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-antlr4_runtime-Debug-9385b568fc93e29b96c9.json",
+					"name" : "antlr4_runtime",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "antlr4_runtime-build_shared::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-antlr4_runtime-build_shared-Debug-2cadc3b859951452f612.json",
+					"name" : "antlr4_runtime-build_shared",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "antlr4_runtime-build_static::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-antlr4_runtime-build_static-Debug-eebf5bef3e671dd39b6e.json",
+					"name" : "antlr4_runtime-build_static",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "intrinsics_gen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-intrinsics_gen-Debug-6995ec5178a509f7d4d0.json",
+					"name" : "intrinsics_gen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "omp_gen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-omp_gen-Debug-a1d13cd37e313ac68b71.json",
+					"name" : "omp_gen",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build",
+		"source" : "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

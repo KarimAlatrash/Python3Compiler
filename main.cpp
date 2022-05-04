@@ -1,13 +1,13 @@
 #include <iostream>
-#include <std
 #include "antlr4-runtime.h"
-#include "dist/antlr4/Python3Lexer.h"
-#include "dist/antlr4/Python3Parser.h"
+#include "generated/Python3Lexer.h"
+#include "generated/Python3Parser.h"
 
 int main(int argc, const char* argv[]) {
 
+    std::string s = "4.4**4.6";
     // Provide the input text in a stream
-    antlr4::ANTLRInputStream input("6*(2+3)");
+    antlr4::ANTLRInputStream input(s);
     
     // Create a lexer from the input
     Python3Lexer lexer(&input);

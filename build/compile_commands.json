@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build",
+  "command": "/usr/bin/clang++ -DANTLR4CPP_STATIC -I/usr/local/opt/llvm/include -I/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime/runtime/Cpp/runtime/src -I/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Lexer -I/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Parser -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -std=gnu++17 -o CMakeFiles/antlr-compiler.dir/main.cpp.o -c /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/main.cpp",
+  "file": "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/main.cpp"
+},
+{
+  "directory": "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build",
+  "command": "/usr/bin/clang++ -DANTLR4CPP_STATIC -I/usr/local/opt/llvm/include -I/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime/runtime/Cpp/runtime/src -I/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Lexer -I/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Parser -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -std=gnu++17 -o CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp.o -c /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp",
+  "file": "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Lexer/Python3Lexer.cpp"
+},
+{
+  "directory": "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build",
+  "command": "/usr/bin/clang++ -DANTLR4CPP_STATIC -I/usr/local/opt/llvm/include -I/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime/runtime/Cpp/runtime/src -I/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Lexer -I/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Parser -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -std=gnu++17 -o CMakeFiles/antlr-compiler.dir/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp.o -c /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp",
+  "file": "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4cpp_generated_src/Python3Parser/Python3Parser.cpp"
+}
+]

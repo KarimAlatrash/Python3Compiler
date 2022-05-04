@@ -32,12 +32,12 @@ if(error_code)
 endif()
 
 execute_process(
-  COMMAND "/usr/local/bin/git"  checkout master --
+  COMMAND "/usr/local/bin/git"  checkout e4c1a74 --
   WORKING_DIRECTORY "/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime"
   RESULT_VARIABLE error_code
   )
 if(error_code)
-  message(FATAL_ERROR "Failed to checkout tag: 'master'")
+  message(FATAL_ERROR "Failed to checkout tag: 'e4c1a74'")
 endif()
 
 set(init_submodules TRUE)

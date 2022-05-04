@@ -1,6 +1,7 @@
 /*
  * The MIT License (MIT)
  *
+ 
  * Copyright (c) 2014 by Bart Kiers
  *
  * Permission is hereby granted, free of charge, to any person
@@ -35,8 +36,110 @@ lexer grammar Python3Lexer;
 
 tokens { INDENT, DEDENT }
 
-options {
-    superClass=Python3LexerBase;
+@lexer::header {
+  #include "Python3Parser.h"
+}
+
+@lexer::members {
+  private:
+  // A queue where extra tokens are pushed on (see the NEWLINE lexer rule).
+  std::vector<std::unique_ptr<antlr4::Token>> m_tokens;
+  // The stack that keeps track of the indentation level.
+  std::stack<int> m_indents;
+  // The amount of opened braces, brackets and parenthesis.
+  int m_opened = 0;
+  // The most recently produced token.
+  std::unique_ptr<antlr4::Token> m_pLastToken = nullptr;
+  
+  public:
+  virtual void emit(std::unique_ptr<antlr4::Token> newToken) override {
+    m_tokens.push_back(cloneToken(newToken));
+    setToken(std::move(newToken));
+  }
+
+  std::unique_ptr<antlr4::Token> nextToken() override {
+    // Check if the end-of-file is ahead and there are still some DEDENTS expected.
+    if (_input->LA(1) == EOF && !m_indents.empty()) {
+      // Remove any trailing EOF tokens from our buffer.
+      for (int i = m_tokens.size() - 1; i >= 0; i--) {
+        if (m_tokens[i]->getType() == EOF) {
+          m_tokens.erase(m_tokens.begin() + i);
+        }
+      }
+
+      // First emit an extra line break that serves as the end of the statement.
+      emit(commonToken(Python3Parser::NEWLINE, "\n"));
+
+      // Now emit as much DEDENT tokens as needed.
+      while (!m_indents.empty()) {
+        emit(createDedent());
+        m_indents.pop();
+      }
+
+      // Put the EOF back on the token stream.
+      emit(commonToken(EOF, "<EOF>"));
+    }
+
+    std::unique_ptr<antlr4::Token> next = Lexer::nextToken();
+
+    if (next->getChannel() == antlr4::Token::DEFAULT_CHANNEL) {
+      // Keep track of the last token on the default channel.
+      m_pLastToken = cloneToken(next);
+    }
+
+    if (!m_tokens.empty())
+    {
+      next = std::move(*m_tokens.begin());
+      m_tokens.erase(m_tokens.begin());
+    }
+
+    return next;
+  }
+
+  private:
+  std::unique_ptr<antlr4::Token> createDedent() {
+    std::unique_ptr<antlr4::CommonToken> dedent = commonToken(Python3Parser::DEDENT, "");
+    return dedent;
+  }
+
+  std::unique_ptr<antlr4::CommonToken> commonToken(size_t type, const std::string& text) {
+    int stop = getCharIndex() - 1;
+    int start = text.empty() ? stop : stop - text.size() + 1;
+    return _factory->create({ this, _input }, type, text, DEFAULT_TOKEN_CHANNEL, start, stop, m_pLastToken ? m_pLastToken->getLine() : 0, m_pLastToken ? m_pLastToken->getCharPositionInLine() : 0);
+  }
+
+  std::unique_ptr<antlr4::CommonToken> cloneToken(const std::unique_ptr<antlr4::Token>& source) {
+      return _factory->create({ this, _input }, source->getType(), source->getText(), source->getChannel(), source->getStartIndex(), source->getStopIndex(), source->getLine(), source->getCharPositionInLine());
+  }
+
+
+  // Calculates the indentation of the provided spaces, taking the
+  // following rules into account:
+  //
+  // "Tabs are replaced (from left to right) by one to eight spaces
+  //  such that the total number of characters up to and including
+  //  the replacement is a multiple of eight [...]"
+  //
+  //  -- https://docs.python.org/3.1/reference/lexical_analysis.html#indentation
+  static int getIndentationCount(const std::string& spaces) {
+    int count = 0;
+    for (char ch : spaces) {
+      switch (ch) {
+        case '\t':
+          count += 8 - (count % 8);
+          break;
+        default:
+          // A normal space char.
+          count++;
+      }
+    }
+
+    return count;
+  }
+
+  bool atStartOfInput() {
+    return getCharPositionInLine() == 0 && getLine() == 1;
+  }
 }
 
 /*
@@ -98,10 +201,53 @@ ASYNC : 'async';
 AWAIT : 'await';
 
 NEWLINE
- : ( {this.atStartOfInput()}?   SPACES
+ : ( {atStartOfInput()}?   SPACES
    | ( '\r'? '\n' | '\r' | '\f' ) SPACES?
    )
-   {this.onNewLine();}
+   {
+     {	 
+     std::string newLine, spaces;
+     std::string text = getText();
+     for(char c : text)
+     {
+       if ((c == '\r') || (c == '\n') || (c == '\f'))
+         newLine.push_back(c);
+       else
+         spaces.push_back(c);
+     }
+
+
+     // Strip newlines inside open clauses except if we are near EOF. We keep NEWLINEs near EOF to
+     // satisfy the final newline needed by the single_put rule used by the REPL.
+     int next = _input->LA(1);
+     int nextnext = _input->LA(2);
+     if (m_opened > 0 || (nextnext != -1 && (next == '\r' || next == '\n' || next == '\f' || next == '#'))) {
+       // If we're inside a list or on a blank line, ignore all indents, 
+       // dedents and line breaks.
+       skip();
+     }
+     else {
+       emit(commonToken(NEWLINE, newLine));
+       int indent = getIndentationCount(spaces);
+       int previous = m_indents.empty() ? 0 : m_indents.top();
+       if (indent == previous) {
+         // skip indents of the same size as the present indent-size
+         skip();
+       }
+       else if (indent > previous) {
+         m_indents.push(indent);
+         emit(commonToken(Python3Parser::INDENT, spaces));
+       }
+       else {
+         // Possibly emit more than 1 DEDENT token.
+         while(!m_indents.empty() && m_indents.top() > indent) {
+           emit(createDedent());
+           m_indents.pop();
+         }
+       }
+     }
+     }
+   }
  ;
 
 /// identifier   ::=  id_start id_continue*
@@ -157,15 +303,15 @@ IMAG_NUMBER
 DOT : '.';
 ELLIPSIS : '...';
 STAR : '*';
-OPEN_PAREN : '(' {this.openBrace();};
-CLOSE_PAREN : ')' {this.closeBrace();};
+OPEN_PAREN : '(' {m_opened++;};
+CLOSE_PAREN : ')' {m_opened--;};
 COMMA : ',';
 COLON : ':';
 SEMI_COLON : ';';
 POWER : '**';
 ASSIGN : '=';
-OPEN_BRACK : '[' {this.openBrace();};
-CLOSE_BRACK : ']' {this.closeBrace();};
+OPEN_BRACK : '[' {m_opened++;};
+CLOSE_BRACK : ']' {m_opened--;};
 OR_OP : '|';
 XOR : '^';
 AND_OP : '&';
@@ -177,8 +323,8 @@ DIV : '/';
 MOD : '%';
 IDIV : '//';
 NOT_OP : '~';
-OPEN_BRACE : '{' {this.openBrace();};
-CLOSE_BRACE : '}' {this.closeBrace();};
+OPEN_BRACE : '{' {m_opened++;};
+CLOSE_BRACE : '}' {m_opened--;};
 LESS_THAN : '<';
 GREATER_THAN : '>';
 EQUALS : '==';

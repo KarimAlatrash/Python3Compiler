@@ -8,7 +8,9 @@ find_package(LLVM REQUIRED CONFIG)
 message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
 message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
 
-set (CMAKE_CXX_STANDARD 11)
+set (CMAKE_CXX_STANDARD 17)
+#required to get rid of getNextToken() issue. This issue should be resolved soon, remove when resolved.
+set(ANTLR4_TAG e4c1a74)
 
 include_directories(${LLVM_INCLUDE_DIRS})
 add_definitions(${LLVM_DEFINITIONS})
@@ -22,24 +24,22 @@ include(ExternalAntlr4Cpp)
 include_directories(${ANTLR4_INCLUDE_DIRS})
 # set variable pointing to the antlr tool that supports C++
 # this is not required if the jar file can be found under PATH environment
-set(ANTLR_EXECUTABLE /usr/local/lib/antlr-4.9.2-complete.jar)
+set(ANTLR_EXECUTABLE ${PROJECT_SOURCE_DIR}/thirdparty/antlr/antlr-4.9.2-complete.jar)
 # add macros to generate ANTLR Cpp code from grammar
 find_package(ANTLR REQUIRED)
 
 # Call macro to add lexer and grammar to your build dependencies.
-antlr_target(Python3Lexer Python3Lexer.g4 LEXER
-             PACKAGE antlrcpptest)
+antlr_target(Python3Lexer Python3Lexer.g4 LEXER)
 antlr_target(Python3Parser Python3Parser.g4 PARSER
-             PACKAGE antlrcpptest
              DEPENDS_ANTLR Python3Lexer
              COMPILE_FLAGS -lib ${ANTLR_Python3Lexer_OUTPUT_DIR})
 
 # include generated files in project environment
-include_directories(${ANTLR_SampleGrammarLexer_OUTPUT_DIR})
-include_directories(${ANTLR_SampleGrammarParser_OUTPUT_DIR})
+include_directories(${ANTLR_Python3Lexer_OUTPUT_DIR})
+include_directories(${ANTLR_Python3Parser_OUTPUT_DIR})
 
 # Now build our tools
-add_executable(antlr-compiler main.cpp ${ANTLR_SampleGrammarLexer_CXX_OUTPUTS} ${ANTLR_SampleGrammarParser_CXX_OUTPUTS})
+add_executable(antlr-compiler main.cpp ${ANTLR_Python3Lexer_CXX_OUTPUTS} ${ANTLR_Python3Parser_CXX_OUTPUTS})
 
 # Find the libraries that correspond to the LLVM components
 # that we wish to use

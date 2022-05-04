@@ -87,10 +87,10 @@ antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-build: antlr4_runtime/src
 	cd /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime/runtime/Cpp && /usr/local/Cellar/cmake/3.22.1/bin/cmake -E touch /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-build
 
 antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-configure: antlr4_runtime/tmp/antlr4_runtime-cfgcmd.txt
-antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-configure: antlr4_runtime/tmp/antlr4_runtime-cache-.cmake
+antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-configure: antlr4_runtime/tmp/antlr4_runtime-cache-Debug.cmake
 antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-configure: antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-patch
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Performing configure step for 'antlr4_runtime'"
-	cd /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime/runtime/Cpp && /usr/local/Cellar/cmake/3.22.1/bin/cmake "-GUnix Makefiles" -C/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/tmp/antlr4_runtime-cache-.cmake /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime/runtime/Cpp
+	cd /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime/runtime/Cpp && /usr/local/Cellar/cmake/3.22.1/bin/cmake "-GUnix Makefiles" -C/Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/tmp/antlr4_runtime-cache-Debug.cmake /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime/runtime/Cpp
 	cd /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime/runtime/Cpp && /usr/local/Cellar/cmake/3.22.1/bin/cmake -E touch /Users/karimalatrash/Documents/CodePlayground/compilers/AntlrPython/build/antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-configure
 
 antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-download: antlr4_runtime/src/antlr4_runtime-stamp/antlr4_runtime-gitinfo.txt
